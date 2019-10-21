@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#username,#psd{
+				width: 300px;
+
+			}
+		</style>
+	</head>
+	<body>
+		<form action="">
+			<input type="text" name="username" id="username" value="" placeholder="请输入用户名，长度在6~12位之间"/><br />
+			<span id="info"></span><br />
+			<input type="password" name="psd" id="psd" value="" placeholder="请输入密码"/><br />
+			
+			<input type="text" name="" id="other" value="应届毕业生"/><br />
+			<input type="submit" value="提交"/>
+		</form>
+		
+		
+		
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//失去焦点
+				$("#username").blur(function(){
+					var len=$(this).val().length;     //获取用户输入的长度
+					if(len<6 || len>12){
+						$("#info").html("用户名要在6~12位之间，请重新输入。");
+					}
+					else{
+						$("#info").html("输入格式正确");
+					}
+				});
+				
+				$("#username").focus(function(){
+					$("#info").html("");   //将#info里的字符串清空
+				});
+				//change,文本被修改，当离开焦点或者按回车键时触发动作
+				$("#other").change(function(){
+					alert("文档已被修改");
+				});
+				//submit,表单提交事件
+				$("form").submit(function(){
+					alert("确认提交信息？");
+				});
+				
+				
+				
+			});
+		</script>
+	</body>
+</html>

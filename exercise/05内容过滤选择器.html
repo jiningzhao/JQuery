@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div></div>
+		<div>
+			<p>段落文本</p>
+			<p>吃饭、睡觉、打豆豆</p>
+		</div>
+		<input type="button" name="" id="" value="测试" />
+		
+		
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("input").click(function(){
+					/*包含指定文本的院元素*/
+					$("p:contains('睡觉')").css("color","red");
+					/*不包含子元素或文本的空div*/
+					$("div:empty").css({
+						"width":"100px",
+						"height":"100px",
+						"background-color":"red"
+					});
+					/*含有选择器p的div元素*/
+					$("div:has('p')").css("border","1px solid black");
+					/*和empty相反，找到有子元素或文本的div元素*/
+					$("div:parent").css("background-color","#FFFF00");
+					
+				})
+			})
+		</script>
+		
+	</body>
+</html>

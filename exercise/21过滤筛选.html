@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>欢迎来到<span>我的主页</span></h1>
+		<p>我的<span>名字</span>叫Dam。</p>
+		<p>我住在<a href="#"><span>高新园区</span></a></p>
+		<p>我最好的朋友是Mick。</p>
+		
+		<ul>
+			<li>第1个</li>
+			<li>第2个</li>
+			<li class="cls1">第3个</li>
+			<li>第4个</li>
+			<li class="cls1">第5个</li>
+			<li>第6个</li>
+			<li>第7个</li>
+		</ul>
+		<input type="button" value="点击测试" />
+		
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(":button").click(function(){
+//					/*索引为1的li文字颜色为红色  .eq(1)*/
+//					$("li").eq(1).css("color","red");
+//					/*第1个li文字颜色为绿色   .first()*/
+//					$("li").first().css("color","green");
+//					/*最后一个li文字颜色为蓝色 .last()*/
+//					$("li").last().css("color","blue")
+//					//hasClass(),返回boolean类型，判断某些元素是否有class名符合入参的
+//					alert($("li").hasClass("cls1"));
+//					//过滤出类名叫cls1的元素
+//					$("li").filter(".cls1").css("background-color","aqua");
+//					//is()，返回boolean类型，判断h1标签的父元素是否为div
+//					alert($("h1").parent().is("div"));
+					//找出内部有span标签的p标签
+//					$("p").has("span").css("color","red");
+					$("p,h1").has("a,span").css("color","red");/*has里可以放多个元素，逗号分隔，或的关系*/
+					//class不是cls1的li元素
+					$("li").not(".cls1").css("background-color","orange");/*not用法正好和filter相反*/
+					//索引为[2,4)的元素
+					$("li").slice(2,4).css("color","springgreen")
+					
+					
+				})
+			})
+		</script>
+		
+	</body>
+</html>

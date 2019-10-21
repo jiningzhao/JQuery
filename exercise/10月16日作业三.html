@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			th,td{
+				height: 50px;
+				width: 100px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<table cellspacing="0" style="text-align: center;margin: 50px;">
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>姓名</th>
+					<th>语文</th>
+					<th>数学</th>
+					<th>总分</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>					
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var k=[{index:1,name:"张三","语文":80,"数学":57},
+			{index:2,name:"李四","语文":90,"数学":95},
+			{index:3,name:"王五","语文":78,"数学":82},
+			{index:4,name:"赵六","语文":95,"数学":93},
+			{index:5,name:"刘七","语文":45,"数学":62}];
+			$(function(){
+				$("tr:nth-child(even)").css("background-color","#cccccc")
+				for(var i=0;i<=4;i++){
+					$("td:nth-child(1)").eq(i).text(k[i]["index"]);
+				}
+				for(var i=0;i<=4;i++){
+					$("td:nth-child(2)").eq(i).text(k[i]["name"]);
+				}
+				for(var i=0;i<=4;i++){
+					$("td:nth-child(3)").eq(i).text(k[i]["语文"]);
+					if(k[i]["语文"]<60){
+						$("td:nth-child(3)").eq(i).attr("style","color:red;");
+					}
+				}
+				for(var i=0;i<=4;i++){
+					$("td:nth-child(4)").eq(i).text(k[i]["数学"]);
+					if(k[i]["数学"]<60){
+						$("td:nth-child(4)").eq(i).attr("style","color:red;");
+					}
+				}
+				for(var i=0;i<=4;i++){
+					$("td:nth-child(5)").eq(i).text(k[i]["数学"]+k[i]["语文"]);
+					if(k[i]["数学"]+k[i]["语文"]>=180){
+						$("tr").eq(i+1).attr("style","background-color:gold;");
+					}
+				}
+				
+			});
+		</script>
+		
+	</body>
+</html>

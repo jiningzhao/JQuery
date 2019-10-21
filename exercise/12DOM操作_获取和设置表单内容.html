@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="">
+			请输入用户名：<input type="text" name="username" id="" /><br />
+			
+			
+			<input type="button" value="点击测试" />
+			
+		</form>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(":button").click(function(){
+//					alert($("input[name='username']").val());//获取表单的值value
+					$("input[name='username']").val("李四");//更改表单的值
+					
+				})
+			})
+		
+		
+		</script>
+		
+	</body>
+</html>

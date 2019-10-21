@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+	</head>
+	<body>
+		<a href="#">超链接1</a>
+		<a href="#" title="这是2">超链接2</a>
+		<a href="#">超链接3</a>
+		<a href="#" title="这是4">超链接4</a>
+		<p title="段落">这是段落</p>
+		
+		<!--有title属性的文字变成红色-->
+		<!--title中含有段落的，文字大小改为30像素-->
+		<!--a标签中，title不是"这是2"的下划线去掉-->
+		
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("*[title]").css("color","red");
+				$("[title='段落']").css("font-size","30px");
+				$("a[title!='这是2']").css("text-decoration","none");
+			})
+		</script>
+		
+	</body>
+</html>

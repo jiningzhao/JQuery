@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="radio" name="ch1" id="" value="1"/>苹果<br />
+		<input type="radio" name="ch1" id="" value="2"/>橙子<br />
+		<input type="radio" name="ch1" id="" value="3"/>香蕉<br />
+		<input type="radio" name="ch1" id="" value="4"/>猕猴桃<br />
+		<input type="radio" name="ch1" id="" value="5"/>草莓<br />
+		
+		<input type="button" value="点击获取图片" id="oof"/><hr />
+		<div>
+			<img src="" width=200/>
+		</div>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#oof").click(function(){
+					var a=$(":checked").val();
+					switch(a){
+						case "1":$("img").attr("src","img/7d8a392d1a629743f92e1b65ae9a5fa3.jpg");break;
+						case "2":$("img").attr("src","img/c91bf48d323e49a87f3f5c865e6e38e6.jpg");break;
+						case "3":$("img").attr("src","img/ecaa27efdef1d9e281d3a88bef0ff967.jpg");break;
+						case "4":$("img").attr("src","img/65a8c2e731eef4ae2e7fd6e89f296baa.jpg");break;
+						case "5":$("img").attr("src","img/d7cc7c93a1a0632553efea900401927b.jpg");break;
+					}
+					
+				})
+			})
+		</script>
+	</body>
+</html>

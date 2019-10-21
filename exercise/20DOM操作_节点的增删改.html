@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="" id="" value="增加节点" />
+		<input type="button" name="" id="" value="删除节点" />
+		<input type="button" name="" id="" value="替换节点" />
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(":button").eq(0).click(function(){
+					$("body").prepend("<div></div>");
+				});
+				$(":button").eq(1).click(function(){
+					$("div").remove();//删除节点，找到节点后删除即可
+				});
+				$(":button").eq(2).click(function(){
+					$("div").replaceWith('<p>我是新换的段落</p>');//替换节点，找到节点后删除即可
+				});
+			})
+		</script>
+		
+	</body>
+</html>

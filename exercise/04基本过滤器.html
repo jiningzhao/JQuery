@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>一级标题</h1>
+		<h2>二级标题</h2>
+		<h3>三级标题</h3>
+		<ul>
+			<li>第1个</li>
+			<li>第2个</li>
+			<li id="no3">第3个</li>
+			<li>第4个</li>
+			<li>第5个</li>
+			<li>第6个</li>
+			<li>第7个</li>
+		</ul>
+		
+		<!--筛选出第一个li、最后一个li、id不是no3的li、
+			索引值为偶数的li、索引值为奇数的li、
+			索引值为1的li、索引值大于4的li、索引值小于3的li、
+			所有h1~h6标签
+		-->
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("li:first").css("color","blue");
+				$("li:last").css("color","blue");
+				$("li:not(#no3)").css("background-color","chartreuse");
+				$("li:odd").css("font-size","40px");
+				$("li:even").css("font-size","20px");
+				$("li:eq(1)").css("background-color","royalblue");
+				$("li:gt(4)").css("background-color","burlywood");
+				$("li:lt(3)").css("background-color","yellow");
+				$(":header").css("color","red");
+			});
+		</script>
+		
+	</body>
+</html>

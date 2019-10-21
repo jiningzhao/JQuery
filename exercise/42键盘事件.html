@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<form action="">
+			用户名：<input type="text" name="" id="" />
+			密码：<input type="password" name="" id="" />
+			<input type="submit" value="提交" />
+			
+			
+		</form>
+		
+		
+		
+		
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//键盘按下事件，注意$(document)，function带参数
+				$(document).keydown(function(even){
+					if(even.keyCode==13){//keyCode是键盘代码，13表示enter键
+						alert("要提交吗");
+						
+					};
+				});
+			})
+		</script>
+		
+		
+		
+	</body>
+</html>

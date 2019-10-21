@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<p>段落1</p>
+		<p>段落2</p>
+		<p>段落3</p>
+		
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("p").click(function(){
+					//this指向进入本函数的元素
+					alert($(this).html());//this表示被点击的p元素
+				});
+				$("p").mouseenter(function(){
+					//this指向进入本函数的元素
+					$(this).css("color","#FF0000");//this表示被点击的p元素
+				});
+				$("p").mouseleave(function(){
+					//this指向进入本函数的元素
+					$(this).css("color","black")//this表示被点击的p元素
+				});
+				$("p").mousedown(function(){
+					//this指向进入本函数的元素
+					alert("鼠标在该段落上按下");//this表示被点击的p元素
+				});
+				$("p").mouseup(function(){
+					//this指向进入本函数的元素
+					alert("鼠标在该段落上抬起");//this表示被点击的p元素
+				});
+			});
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

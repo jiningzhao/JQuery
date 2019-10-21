@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<input type="button" name="" id="" value="显示"/>
+		<input type="button" name="" id="" value="隐藏"/>
+		
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("input:eq(0)").click(function(){
+					$("div:hidden").css("display","block");/*筛选出隐藏的*/
+				});
+				$("input:eq(1)").click(function(){
+					$("div:visible").css("display","none");/*筛选出可见的*/
+				});
+				
+			})
+		</script>
+		
+		
+	</body>
+</html>

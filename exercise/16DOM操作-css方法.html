@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div>text</div>
+		<input type="button" value="点击测试" />
+		
+		
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(":button").click(function(){
+					//背景色，字体大小，文字居中
+					//写法1:
+//					$("div").css("background-color","yellow");
+//					$("div").css("font-size","30px");
+//					$("div").css("text-align","center");
+					//写法2:jQuery的链式操作
+//					$("div").css("background-color","yellow")
+//							.css("font-size","30px")
+//							.css("text-align","center");
+					//写法3:
+					$("div").css({"background-color":"yellow",
+									"font-size":"30px",
+									"text-align":"center"});
+							
+					
+				})
+			})
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<ul>你喜欢那个城市？
+			<li>北京</li>
+			<li>上海</li>
+		</ul>
+		<ul>你喜欢哪个游戏？
+			<li>王者荣耀</li>
+			<li>绝地求生</li>
+		</ul>
+		<input type="radio" name="sel" id="" value="0"/>城市
+		<input type="radio" name="sel" id="" value="1"/>游戏
+		<input type="text" name="" id="" />
+		<input type="button" value="添加" />
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+			$(function(){
+				$(":button").click(function(){
+					if($(":checked").val()=="0"){
+						$("ul:eq(0)").append("<li>"+$(":text").val()+"</li>");
+					}
+					if($(":checked").val()=="1"){
+						$("ul:eq(1)").append("<li>"+$(":text").val()+"</li>");
+					}
+					
+				})
+			})
+		</script>
+		
+	</body>
+</html>

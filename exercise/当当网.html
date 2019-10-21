@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			form{
+				
+			}
+			span{
+				font-size: 12px;
+				color: darkgray;
+			}
+			#tel-no,#psd,#psd1{
+				width: 300px;
+			}
+			.red{
+				color: red;
+			}
+			.green{
+				color: gold;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="">
+			手机号码 <input type="text" name="" id="tel-no" value="" placeholder="请输入您的手机号码"/><br />
+			<span id="info1">手机号可用于登录、找回密码、接收订单通知等服务</span><br />
+			登录密码 <input type="password" name="" id="psd" value="" /><br />
+			<span id="info2"></span><br />
+			确认密码 <input type="password" name="" id="psd1" value="" /><br />
+			<span id="info3"></span><br />
+			<div>
+				验证码 <input type="text" name="" id="yan" value="" placeholder="请输入验证码"/>
+				<img src="img/65a8c2e731eef4ae2e7fd6e89f296baa.jpg" width="100"/>
+			</div>
+			<span id="info4"></span><br />
+			<input type="submit" name="" id="" value="提交" />
+			
+		</form>
+		
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#tel-no").blur(function(){
+					var tel=$("#tel-no").val().length;
+					if(tel!=11&&tel!=0){
+						$("#info1").filter(".green").removeClass("green");
+						$("#info1").html("手机号格式不正确，请重新输入").toggleClass("red");
+					}
+					else if(tel==0){
+						$("#info1").filter(".green").removeClass("green");
+						$("#info1").html("手机号码不能为空").toggleClass("red");
+					}
+					else{
+						
+						$("#info1").filter(".red").removeClass("red");
+						$("#info1").html("输入正确").toggleClass("green");
+					}
+				});
+//				$("#tel-no").focus(function(){
+//					$(this).val(" ");
+//				}); 
+				$("#psd").blur(function(){
+					var len=$(this).val().length;
+					if(len==0){
+						$("#info2").filter(".green").removeClass("green");
+						$("#info2").html("密码不能为空").toggleClass("red");
+						$("#info3").html(" ");
+					}
+					else{
+						$("#info2").filter(".red").removeClass("red");
+						$("#info2").html("密码输入正确").toggleClass("green");
+						$("#info3").html("请再次输入密码");
+					}
+					
+				});
+				$("#psd1").blur(function(){
+					if($(this).val()==$("#psd").val()&&$(this).val().length!=0){
+						$("#info2").filter(".red").removeClass("red");
+						$("#info3").filter(".red").removeClass("red");
+						$("#info2").html("密码验证成功").toggleClass("green");
+						$("#info3").html("密码验证成功").toggleClass("green");
+					}
+					else{
+						$("#info2").filter(".green").removeClass("green");
+						$("#info3").filter(".green").removeClass("green");
+						$("#info2").html("请重新输入密码").toggleClass("red");
+						$("#info3").html("两次密码输入不相同，请重新输入").toggleClass("red");
+						$("#info3").val(" ");
+						$("#info2").val(" ");
+					}
+				});
+				$("#yan").blur(function(){
+					if($(this).val().length!=4){
+						$("#info4").filter(".green").removeClass("green");
+						$("#info4").html("验证码错误，请重新输入").toggleClass("red");
+					}
+					else{
+						$("#info1").filter(".red").removeClass("red");
+						$("#info4").html("输入正确").toggleClass("green");
+					}
+				});
+			});
+		</script>
+		
+		
+	</body>
+</html>

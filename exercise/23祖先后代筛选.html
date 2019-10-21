@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div,div *{
+				display: block;
+				border: 2px solid black;
+				padding: 5px;
+				margin: 15px;
+			}
+		</style>
+	</head>
+	<body>body(曾祖父节点)
+		<div>div(祖父节点)
+			<ul>ul(父节点)
+				<li>li(子节点)
+					<span>span(孙子节点)</span>
+				</li>
+				<a href="#">a(子节点)</a>
+			</ul>
+		</div>
+		<input type="button" name="" id="" value="点击测试" />
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(":button").click(function(){
+					//children--所有后代,find--后代
+//					$("ul").children().css("border","2px solid red");
+//					$("ul").children("a").css("border","2px solid red");
+//					$("ul").find("span").css("border","2px solid red");
+
+					//closest--向上找最近的
+//					$("span").closest("ul").css("border","2px solid red");
+					//parent--直接父亲,parents--所有祖先,parentsUntil--找祖先，有截止条件
+//					$("span").parent().css("border","2px solid greenyellow");
+//					$("span").parents().css("border","2px solid blue");
+					$("span").parentsUntil("div").css("border","2px solid red");/*找到div之前的所有的父节点*/
+					
+					
+					
+				})
+			});
+		</script>
+		
+		
+	</body>
+</html>

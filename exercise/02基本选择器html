@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				font-size: 50px;
+				color: wheat;
+				text-align: center;
+				line-height: 100px;
+				width: 100px;
+				height: 100px;
+				background-color: #FFFF00;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1">1</div>
+		<div id="box2">2</div>
+		<div id="box3">3</div>
+		<div id="box4">4</div>
+		<div id="box5">5</div>
+		<input type="button" id="btn" value="改变颜色"/>
+		<script src="js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript">
+        	$(function(){
+				$("#btn").click(function(){
+					$("#box1,#box3,#box5").css("background-color","red");
+					$("#box2,#box4").css("background-color","green");
+				})
+			});
+        </script>
+	</body>
+</html>

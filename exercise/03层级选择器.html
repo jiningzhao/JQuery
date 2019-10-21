@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.outside{width: 200px;height: 200px;border: 1px solid black;}
+			.inside{width: 100px;height: 100px;border: 1px solid black;}
+		</style>
+	</head>
+	<body>
+		<!--div.outside>p*3+div.inside>p-->
+		<div class="outside">
+			<p id="p1">第一段</p>
+			<p>第二段</p>
+			<p>第三段</p>
+			<div class="inside">
+				<p>内层第一段</p>
+			</div>
+		</div>
+		<input type="button" value="后代选择器" />
+		<input type="button" value="子选择器" />
+		<input type="button" value="相邻兄弟选择器" />
+		<input type="button" value="相邻所有兄弟选择器" />
+		
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("input:eq(0)").click(function(){      /*eq(0)表示第一个input标签，从0开始计数*/
+					/*让所有outside下所有的后代p文字颜色变为红色*/
+					$(".outside p").css("color","red");
+					
+				});
+				$("input").eq(1).click(function(){      /*eq(0)表示第一个input标签，从0开始计数*/
+					/*让所有outside下所有的后代p文字颜色变为红色*/
+					$(".outside>p").css("color","red");
+					
+				});
+				$("input").eq(2).click(function(){      /*eq(0)表示第一个input标签，从0开始计数*/
+					/*让所有outside下所有的后代p文字颜色变为红色*/
+//					$("#p1+p").css("color","red");
+					$("#p1").next("p").css("color","red");/*与上一行等价*/
+					
+				});
+				$("input").eq(3).click(function(){      /*eq(0)表示第一个input标签，从0开始计数*/
+					/*让所有outside下所有的后代p文字颜色变为红色*/
+//					$("#p1~p").css("color","red");
+					$("#p1").nextAll("p").css("color","red");/*与上一行等价*/
+				});
+			})
+		</script>
+		
+	</body>
+</html>

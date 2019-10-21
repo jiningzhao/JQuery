@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>Value:</p>
+		<form action="">
+			<input type="text" name="" id="" value="John"/><br />
+			<input type="text" name="" id="" value="123456"/><br />
+			<input type="text" name="" id="" value="school"/><br />
+		</form>
+		<input type="button" value="点击测试" />
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(":button").click(function(){
+					var str=$("form input").map(function(){//将筛选出的每个元素通过map里的函数进行变化
+						return $(this).val().toUpperCase();//this对应的是$("form input")
+					}).get().join(",");
+					
+					$("p").append(str);
+				})
+			})
+		</script>
+		
+	</body>
+</html>

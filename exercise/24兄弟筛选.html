@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div,div *{
+				border: 2px solid black;
+				padding: 5px;
+				margin: 15px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div>div(父元素)
+			<p>p</p>
+			<span>span</span>
+			<h2>h2</h2>
+			<h3>h3</h3>
+			<p>p</p>
+		</div>
+		<input type="button" value="点击测试" />
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript">
+				$(function(){
+					$(":button").click(function(){
+//						$("h2").siblings().css("border","2px solid red");//找所有兄弟
+//						$("h2").siblings("p").css("border","2px solid red");//找兄弟中的p标签
+						//next、nextAll()、nextUntil
+						$("h2").next().css("border","2px solid red");/*h2下一个兄弟，边框变为红色*/
+						$("p").nextAll().css("background-color","yellow");/*p后边所有兄弟背景变为黄色*/
+						$("p").nextUntil("h3").css("color","red");/*p后面h3之前的兄弟，文字颜色变为红色*/
+						
+						
+					})
+				})
+			</script>
+			
+			
+	</body>
+</html>

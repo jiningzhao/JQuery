@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				border: 1px solid black;
+			}
+			.yellow{
+				background-color: yellow;
+			}
+			.newfont{
+				font-family: "微软雅黑";
+				font-size: 30px;
+				text-align: center;
+				line-height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>text</div>
+		<input type="button" value="addClass" />
+		<input type="button" value="removeClass" />
+		<input type="button" value="toggleClass" />
+		
+		
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(":button").eq(0).click(function(){
+					$("div").addClass("yellow newfont");//添加两个class样式，空格分隔开
+					
+					
+				});
+				$(":button").eq(1).click(function(){
+					
+					$("div").removeClass("yellow newfont");
+					
+					
+				});
+				$(":button").eq(2).click(function(){
+					
+					$("div").toggleClass("yellow newfont");
+					
+				});
+			})
+		</script>
+		
+		
+	</body>
+</html>

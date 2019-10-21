@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			a{
+				text-decoration: none;
+			}
+			div{
+				width: 400px;
+			}
+			li{
+				list-style: none;
+				width: 100px;
+				float: left;-
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<ul>
+				<li><a href="#">第1个标签</a></li>
+				<li><a href="#">第2个标签</a></li>
+				<li><a href="#">第3个标签</a></li>
+				<li><a href="#">第4个标签</a></li>
+				<li><a href="#">第5个标签</a></li>
+				<li><a href="#">第6个标签</a></li>
+				<li><a href="#">第7个标签</a></li>
+				<li><a href="#">第8个标签</a></li>
+				<li><a href="#">第9个标签</a></li>
+				<li><a href="#">第10个标签</a></li>
+				<li><a href="#">第11个标签</a></li>
+				<li><a href="#">第12个标签</a></li>
+				<li><a href="#">第13个标签</a></li>
+				<li><a href="#">第14个标签</a></li>
+				<li><a href="#">第15个标签</a></li>
+				<li><a href="#">第16个标签</a></li>
+				<li><a href="#">第17个标签</a></li>
+				<li><a href="#">第18个标签</a></li>
+				<li><a href="#">第19个标签</a></li>
+				<li><a href="#">第20个标签</a></li>
+				<li><a href="#">第21个标签</a></li>
+				<li><a href="#">第22个标签</a></li>
+				<li><a href="#">第23个标签</a></li>
+				<li><a href="#">第24个标签</a></li>
+				<li><a href="#">第25个标签</a></li>
+				<li><a href="#">第26个标签</a></li>
+				<li><a href="#">第27个标签</a></li>
+				<li><a href="#">第28个标签</a></li>
+				<li><a href="#">第29个标签</a></li>
+				<li><a href="#">第30个标签</a></li>
+				<li><a href="#">第31个标签</a></li>
+				<li><a href="#">第32个标签</a></li>
+				<li><a href="#">第33个标签</a></li>
+				<li><a href="#">第34个标签</a></li>
+				<li><a href="#">第35个标签</a></li>
+				<li><a href="#">第36个标签</a></li>
+				<li><a href="#">第37个标签</a></li>
+				<li><a href="#">第38个标签</a></li>
+				<li><a href="#">第39个标签</a></li>
+				<li><a href="#">第40个标签</a></li>
+				<li><a href="#">第41个标签</a></li>
+				<li><a href="#">第42个标签</a></li>
+				<li><a href="#">第43个标签</a></li>
+				<li><a href="#">第44个标签</a></li>
+				<li><a href="#">第45个标签</a></li>
+				<li><a href="#">第46个标签</a></li>
+				<li><a href="#">第47个标签</a></li>
+				<li><a href="#">第48个标签</a></li>
+				<li><a href="#">第49个标签</a></li>
+				<li><a href="#">其他品牌</a></li>
+			</ul>
+		</div>
+		<input type="button" value="显示全部品牌" />
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("li").slice(10,49).hide();
+				$(":button").click(function(){
+					if($(":button").val()=="显示全部品牌"){
+						$(":button").val("显示部分品牌");
+						$("li").slice(10,49).show();
+					}
+					else if($(":button").val()=="显示部分品牌"){
+						$(":button").val("显示全部品牌");
+						$("li").slice(10,49).hide();
+					}
+					
+				})
+			})
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				border: 10px solid black;
+				margin: 20px;
+				padding: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<input type="button" value="点击测试" />
+		<p>主体宽：</p>
+		<p>主体高：</p>
+		<p>加上padding宽：</p>
+		<p>加上padding高：</p>
+		<p>加上border宽：</p>
+		<p>加上border高：</p>
+		<p>加上margin宽：</p>
+		<p>加上margin高：</p>
+		<p>更改后的主体宽：</p>
+		<p>更改后的主体高：</p>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(":button").click(function(){
+					$("p").eq(0).append($("div").width());
+					$("p").eq(1).append($("div").height());
+					$("p").eq(8).append($("div").width(200));
+					$("p").eq(9).append($("div").height(200));
+					$("p").eq(2).append($("div").innerWidth());
+					$("p").eq(3).append($("div").innerHeight());
+					$("p").eq(4).append($("div").outerWidth());
+					$("p").eq(5).append($("div").outerHeight());
+					$("p").eq(6).append($("div").outerWidth(true));
+					$("p").eq(7).append($("div").outerHeight(true));
+					
+				});
+				
+			})
+		</script>
+		
+	</body>
+</html>

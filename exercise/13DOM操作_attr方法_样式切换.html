@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.red{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div id="box">text</div>
+		<input type="button" value="设置样式" />
+		<input type="button" value="清除样式" />
+		
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(":button").eq(0).click(function(){
+					/*设置样式,相当于在div标签中写class="red"*/
+//					$("#box").attr("class","red");
+					/*attr的第二个属性还可以写成回调函数，函数内return待设置的值*/
+					$("#box").attr("class",function(){
+						return "red";
+					});
+				});
+				$(":button").eq(1).click(function(){
+					/*清除样式*/
+					$("#box").removeAttr("class");
+					
+				});
+			})
+		</script>
+		
+	</body>
+</html>

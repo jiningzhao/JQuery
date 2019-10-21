@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<p>body中第一个段落</p>
+		<div style="border: 1px solid black;">
+			<p>div中第1个段落</p>
+			<p>div中第2个段落</p>
+			<p>div中第3个段落</p>
+			<p>div中第4个段落</p>
+		</div>
+		<div style="border: 1px solid black;">
+			<span>这是一个span元素</span>
+			<p>div中第1个段落</p>
+			<p>div中第2个段落</p>
+			<p>div中第3个段落</p>
+			<p>div中第4个段落</p>
+		</div>
+		<p>body中最后一个段落</p>
+		<input type="button" value="点击测试" />
+		
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("input").click(function(){
+					$("p:first-child").css("color","red");//所有父元素下的第一个子元素p
+					$("p:first-of-type").css("background-color","yellow");//所有相同元素名称的第一个兄弟元素
+					//所有父级元素下的第偶数个子元素，注意下标从1开始
+					$("p:nth-child(even)").css("color","blue");
+					
+					
+				})
+			});
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				border: 2px solid black;
+			}
+			.red{
+				background-color: red;
+			}
+			.yellow{
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<input type="button" value="append" />
+		<input type="button" value="prepend" />
+		<input type="button" value="after" />
+		<input type="button" value="before" />
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(":button").eq(0).click(function(){
+					$("body").append("<div class='red'></div>");
+//					$("<div class='red'></div>").appendTo("body");
+				});
+				$(":button").eq(1).click(function(){
+//					$("body").prepend("<div class='yellow'></div>");
+					$("<div class='yellow'></div>").prependTo("body");
+				});
+				//after是节点外部添加兄弟节点
+				$(":button").eq(2).click(function(){
+//					$("div").after('<p>div外部下方的p</p>');
+					$('<p>div外部下方的p</p>').insertAfter("div");
+				});
+				$(":button").eq(3).click(function(){
+//					$("div").before('<p>div外部上方的p</p>');
+					$('<p>div外部上方的p</p>').insertBefore("div");
+				});
+			})
+		</script>
+		
+		
+	</body>
+</html>

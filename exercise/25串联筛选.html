@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>欢迎</h1>
+		<p>一个p元素</p>
+		<p>另一个p元素</p>
+		<span>一个span元素</span>
+		<span>一个span元素</span>
+		<br />
+		<div>Hello world!
+			<p>What a beautiful day!</p>
+		</div>
+		<input type="button" value="add方法" />
+		<input type="button" value="addBack方法" />
+		<input type="button" value="end方法" />
+		<input type="button" value="contents方法" />
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(":button").eq(0).click(function(){
+					$("h1").add("p").add("span").css("background-color","yellow");
+				});
+				$(":button").eq(1).click(function(){
+					$("h1").nextAll().addBack().css("background-color","yellow");
+					//将$("h1").nextAll()筛选的元素，加上$("h1")的元素，就是addBack()的效果
+				});
+				$(":button").eq(2).click(function(){
+					$("h1").nextAll().css("background-color","#FFFF00").end().css("color","red");
+					//end()终止在当前链的最新过滤操作nextAll()，回到nextAll()之前的筛选结果
+				});
+				$(":button").eq(3).click(function(){
+					//wrap()表示包围
+					$("div").contents().wrap("<b/>");//div的子元素、文字、注释都用<b>包围
+//					$("div").children().wrap("<b/>"); //div的子元素，不包含文字
+				});
+			})
+		</script>
+		
+		
+		
+	</body>
+</html>
